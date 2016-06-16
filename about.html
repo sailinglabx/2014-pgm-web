@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>10708 Probabilistic Graphical Models</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="external.js"></script>
+    <link rel="stylesheet" href="style-mac.css" type="text/css" />
+    <script type="text/javascript">var dmWorkPath=".";</script>
+    <script type="text/javascript" src="dmenu.js"></script>
+</head>
+<body>
+<div id="mainmenu">
+    <script type="text/javascript" src="data-menu.js"></script>
+</div>  <!--mainmenu-->
+<div id="content">
+<table id="header">
+    <tr>
+        <td class="hspace" />
+        <td><a href="http://www.cmu.edu" rel="external"><img src="images/CarnegieMellonSeal.gif" alt="" /></a></td>
+        <td class="hspace2" />
+        <td>
+            <div class="coursetitle">Probabilistic Graphical Models</div>
+            <b><b>
+                10-708, Spring 2014<br /><br />
+                <a href="http://www.cs.cmu.edu/~epxing" rel="external" class="lecturer">Eric Xing</a><br />
+                School of Computer Science, Carnegie Mellon University
+            </b></b>
+        </td>
+    </tr>
+</table>
+
+<!--Page content begins. Keep this line.-->
+
+<div id="maincontent">
+<div class="Section1">
+<h2>Course Description</h2>
+
+Many of the problems in artificial intelligence, statistics, computer systems, computer vision, natural language processing, and computational biology, among many other fields, can be viewed as the search for a coherent global conclusion from local information.  The probabilistic graphical models framework provides an unified view for this wide range of problems, enabling efficient inference, decision-making and learning in problems with a very large number of attributes and huge datasets. This graduate-level course will provide you with a strong foundation for both applying graphical models to complex problems and for addressing core research topics in graphical models.
+
+<p>
+The class will cover three aspects: the core representation, including Bayesian and Markov networks, and dynamic Bayesian networks; probabilistic inference algorithms, both exact and approximate; and learning methods for both the parameters and the structure of graphical models. Students entering the class should have a pre-existing working knowledge of probability, statistics, and algorithms, though the class has been designed to allow students with a strong mathematical background to catch up and fully participate.
+
+<p>
+It is expected that after taking this class, students will have obtained sufficient working knowledge of multi-variate probablistic modeling and inference for practical applications,  should be able to fomulate and solve a wide range of problems in their own domain using graphical models, and can advance into more specialized technical literature by themselves.
+
+
+<p>
+In order to take this class, students are required to have successfully completed Machine Learning 10-701/15-781, or an equivalent class.
+
+
+<h2 id="textbook">Textbook</h2>
+<p>
+The required textbook for this class is:
+</p>
+  <ul>
+   <li>Daphne Koller and Nir Friedman, <span
+ style="color: teal;"><b><a href="http://www.amazon.com/Probabilistic-Graphical-Models-Principles-Computation/dp/0262013193/ref=sr_1_1?ie=UTF8&s=books&qid=1250711756&sr=8-1">Probabilistic Graphical Models: Principles and Techniques</a></b></span></li>
+ </ul>
+ <p>
+ We will also be using excerpts from the following work, which you do not need to purchase:
+ </p>
+ <ul>
+    <li>Michael I. Jordan, <span
+ style="color: black;"><b>An Introduction to Probabilistic Graphical
+Models, </b></span>in preparation. Copies of certain chapters will be made
+available.<o:p></o:p></li>
+ 
+  </ul>
+
+
+<h2 id="grading">Grading</h2>
+<p>The class requirements
+include brief daily reading summaries, scribe notes for 1 lecture, 5 problem sets, and a project.
+This is a PhD level course, and by the end of this class you should have a good
+understanding of the basic methodologies in probabilistic graphical models,
+and be able to use them to solve real problems of
+modest complexity. The grading breakdown is as follows:</p>
+<div class="Section1">
+<ul style="margin-top: 0in;">
+  <li class="MsoNormal">Reading Summaries (10%) </li>
+  <li class="MsoNormal">Scribe Duties (10%) </li>
+  <li class="MsoNormal">Homework Assignments (40%) </li>
+  <li class="MsoNormal">Final Project (40%)</li>
+</ul>
+<p>
+Note that this class does not have any exams.
+</p>
+
+<h2 id="summaries">Reading Summaries</h2>
+<p>
+The required readings for this class are compulsory. At the beginning of each
+lecture, you are to submit a half-page summary of the readings for that
+lecture. These reading summaries are a requirement for this class, and a hard copy must be turned in on time (i.e. before the start of class) by you in order to receive credit. However, you have 5 grace days on which you can submit the summaries after the start of class or via email (e.g. if you need to absent from class for whatever reason) with no penalty.
+<!--If you need to miss a lecture for a good reason, you must let us know in
+advance, and we still require you to turn in a summary via email.-->
+</p>
+
+<p>
+Your summary should be written at a high level, and should focus on the main point of
+the readings (i.e. avoid complicated math). As long as your summary is
+reasonable, you will be given full credit.
+</p>
+
+<h2 id="scribe">Scribe Duties</h2>
+
+<p> Each student is required to scribe for a small number of lectures (most likely just 1).  Most
+lectures will have at least 2 students acting as scribes, and they should work
+as a team. During your assigned lectures, you are to take detailed
+notes in collaboration with your fellow scribes. After the lecture, the scribe
+team is to convert their notes into LaTeX format using <a
+  href="./hw/10708_scribe_template.tex">this template</a>. These notes should
+be at least 6-8 pages long, and must be submitted electronically to the instructor email list within 1
+week after the lecture. We only require one set of notes from the scribe team.
+The instructors will then audit your notes, and post them to the class page
+for everyone's benefit.  </p>
+
+<p>
+As long as your scribe notes are of sufficient standard, you will be
+awarded full credit for scribe duties. If your notes have errors or are otherwise
+not up to standard, we will inform you and give you a chance to correct them.
+You will receive zero credit if you fail to submit your notes.
+</p>
+
+<h2 id="homeworks"> Homeworks</h2>
+<p>There will be 5 homework assignments over the course of the semester. These homeworks may contain material that has been covered by published papers and webpages. Since this is a graduate class, we expect students to solve the problems themselves rather than search for answers online. </p>
+
+<p>The homeworks will be posted on the <a href="http://www.cs.cmu.edu/~epxing/Class/10708-14/homework.html">homework page</a>, along with any other resources (data sets, etc.) that are needed. Homeworks will always be due at 4:00 pm on the specified date, and we ask that you turn in an electronic copy of your homework using the Canvas site for this course. In addition, we strongly recommend that you type up your assignments in LaTeX format using <a href="./hw/10708_homework_template.tex">this template</a>. See below for the homework collaboration, regrade, and late submission policies. </p>
+
+<h2 id="project"> Final Project </h2>
+
+The class project will be carried out in groups of 2 or 3 people, and has four main parts: a proposal, a midway report, a final report, and a poster/oral presentation. The project is an integral part of this class, and is designed to be as similar as possible to researching and writing a conference-style paper. Please see the <a href="http://www.cs.cmu.edu/~epxing/Class/10708-14/project.html">project page</a> for more information about the final project.
+
+<h2 id="collaboration">Collaboration Policy</h2>
+<p><span class="SpellE">Homeworks</span> should be done individually:
+each student must hand in their own answers. It is acceptable,
+however, for students to collaborate when figuring out answers and to
+help each other solve the problems. We will be assuming that, as
+participants in a graduate course, you will be taking the
+responsibility to make sure you personally understand the solution to
+any work arising from such collaboration. You also must indicate <span
+ class="GramE">on each homework</span> with whom you collaborated. </p>
+
+<h2 id="late">Late Policy</h2>
+
+You will be allowed 2 total homework late days without penalty for the entire semester. You may be late by 1 day on two different <span class="SpellE">homeworks</span> or late by 2
+days <span class="GramE">on one homework</span>. Once those days are
+used, you will be penalized according to the following policy:
+
+    <ul>
+      <li class="MsoNormal">Homework is worth full credit at the
+beginning of class on the due date. </li>
+      <li class="MsoNormal">It is worth half credit for the next 48
+hours. </li>
+      <li class="MsoNormal">It is worth zero credit after that. </li>
+    </ul>
+You must turn in at least 4 of the 5 homeworks, even if for zero credit, in order to
+pass the course. All late homework assignments should still be turned in electronically via Canvas.
+
+<h2 id="regrade">Regrade Policy</h2>
+
+<p>If you feel that we have made an error in grading your homework,
+please resubmit your homework with a written explanation to&nbsp;<span>
+</span><a href="mailto:michelle324@cs.cmu.edu">Michelle Martin</a>
+and we will consider your request. Please note that <span
+ class="SpellE">regrading</span> of <span class="GramE">a homework</span>
+may cause your grade to go either up or down. </p>
+<span></span>
+
+<h2 id="auditing">Auditing</h2>
+<p class="MsoNormal">
+To satisfy the auditing requirement, you must do *one* of the following:
+    <ul style="margin-top: 0in;">
+      <li class="MsoNormal">Submit three homeworks, and receive at least 75% of the points on each one.</li>
+      <li class="MsoNormal">Do a class project, which must address a topic related to machine learning and must be something that you have started while taking this class (i.e. it can't be something you did last semester). You will need to submit a project proposal with everyone else, and present a poster with everyone. However, you don't need to submit a milestone or final paper. You must get at least 80% on the poster presentation part of the project.</li>
+      </ul>
+    </ul>
+If you plan to audit the class, please send the instructors an email saying that you will be auditing and telling us which requirement you plan to fulfill.
+
+<h2 id="non-cmu">Note to People Outside CMU</h2>
+<p class="MsoNormal">Please feel free to reuse any of these course
+materials that you find of use in your own courses.&nbsp; We ask that
+you retain any copyright notices, and include a written notice indicating
+the source of any materials you use.</p>
+<span></span>
+
+</div>
+</div>
+</div>  <!--maincontent-->
+
+<!--Page content ends. Keep this line.-->
+
+<hr />
+<div id="trailer">
+&copy; 2009 Eric Xing @ School of Computer Science, Carnegie Mellon University<br />
+<script type="text/javascript">
+    var m = "Last updated " + document.lastModified;
+    var p = m.length-8;
+    document.write(m.substring(p, 0));
+</script>
+[<a href="http://validator.w3.org/check?uri=referer" rel="external">validate xhtml</a>]
+</div>  <!--trailer-->
+</div>  <!--content-->
+</body>
+</html>

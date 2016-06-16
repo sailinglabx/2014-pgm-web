@@ -1,0 +1,1774 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<Head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>10708 Probabilistic Graphical Models</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="external.js"></script>
+    <link rel="stylesheet" href="style-mac.css" type="text/css" />
+    <script type="text/javascript">var dmWorkPath=".";</script>
+    <script type="text/javascript" src="dmenu.js"></script>
+</head>
+<body>
+<div id="mainmenu">
+    <script type="text/javascript" src="data-menu.js"></script>
+</div>  <!--mainmenu-->
+<div id="content">
+<table id="header">
+    <tr>
+        <td class="hspace" />
+        <td><a href="http://www.cmu.edu" rel="external"><img src="images/CarnegieMellonSeal.gif" alt="" /></a></td>
+        <td class="hspace2" />
+        <td>
+            <div class="coursetitle">Probabilistic Graphical Models</div>
+            <b><b>
+                10-708, Spring 2014<br /><br />
+                <a href="http://www.cs.cmu.edu/~epxing" rel="external" class="lecturer">Eric Xing</a><br />
+                School of Computer Science, Carnegie Mellon University
+            </b></b>
+        </td>
+    </tr>
+</table>
+
+<!--Page content begins. Keep this line.-->
+
+  <!--mainmenu-->
+<div id="maincontent">
+
+<h2>Lecture Schedule</h2>
+<big>Lectures are held on Mondays and Wednesdays from 4:30-5:50 pm in GHC 4307. </big><br><br>
+<big>All of the lecture videos can be found <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/33ec284c7d3b42bdaa51dd42deacb1e621">here</a>.</big><br><br>
+<table class="schedule" _base_target="_blank">
+	<tbody _base_target="_blank">
+	<tr _base_target="_blank">
+	<th _base_target="_blank">Date</th>
+      	<th _base_target="_blank">Lecture</th>
+        <th _base_target="_blank">Scribes</th>
+      	<th _base_target="_blank">Readings</th>
+      	<th _base_target="_blank">Videos</th>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Monday,<br>Jan 13</td>
+      	<td _base_target="_blank">
+	Lecture 1 (Eric) - <a href="./lectures/lecture1-Introduction.pdf">Slides</a>
+	<ul> 
+	  <li>Introduction to Graphical Models
+	</ul>
+	</td>
+        <td _base_target="_blank">None</td>
+      	<td _base_target="_blank">
+		Required (no reading summary due): <br> 
+		<ul>
+		  <li>Koller and Friedman Textbook, Ch. 1
+		  <li>Koller and Friedman Textbook, <a href="http://www.cs.cmu.edu/~epxing/Class/10708-13/reading/Ch%203.pdf">Ch. 3</a>
+		<li>M. Jordan, <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.116.7467&rep=rep1&type=pdf">An Introduction to Graphical Models</a>, pg. 1-12<br> 
+		<!-- <li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.116.7467&rep=rep1&type=pdf">An Introduction to Graphical Models</a> -->
+		</ul>
+	</td>
+        <td _base_target="_blank"> <a href="https://youtu.be/lcVJ_zsynMc">Video</a></td>
+</tr>
+
+<tr class="lechead" _base_target="_blank">
+	<td colspan="6" _base_target="_blank">Module 1: Representation</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wednesday,<br>Jan 15</td>
+      	<td _base_target="_blank">
+	Lecture 2 (Eric) - <a href="./lectures/lecture2-BNrepresentation.pdf">Slides</a>
+	<ul> 
+	    <li>Directed Graphical Models: Bayesian Networks<br>
+	</ul>
+	</td>
+        <td _base_target="_blank">Calvin McCarter,<br/> 
+          Daniel Ribeiro Silva (<a href="scribe_notes/scribe_note_lecture2.pdf">Scribe Notes</a>)</td>
+      	<td _base_target="_blank">
+		Required: <br> 
+		<ul>
+		  <li>Koller and Friedman Textbook, <a href="http://www.cs.cmu.edu/~epxing/Class/10708-13/reading/Ch%204.pdf">Ch. 4</a>
+		<li>M. Jordan, <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.116.7467&rep=rep1&type=pdf">An Introduction to Graphical Models</a>, pg. 13-18<br> 
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/_Ftf7gek3Nw">Video</a></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wednesday,<br>Jan 22</td>
+      	<td _base_target="_blank">
+	Lecture 3 (Eric) - <a href="./lectures/lecture3-MRFrepresentation.pdf">Slides</a>
+	<ul> 
+	    <li>Undirected Graphical Models: Markov Random Fields<br>
+	</ul>
+	</td>
+        <td _base_target="_blank">Kirstin Early,<br/> 
+	    Nicole Rafidi <br>(<a href="scribe_notes/scribe_note_lecture3.pdf">Scribe Notes</a>)</td>
+      	<td _base_target="_blank">
+	  Required: None<br>
+	    Optional: <br>
+	      <ul>
+		<li>S. Gould et al., <a href="http://robotics.stanford.edu/~koller/Papers/Gould%2Bal%3AICCV09.pdf">Decomposing a Scene into Geometric and Semantically Consistent Regions</a>
+		  <li>A. Fischer and C. Igel, <a href="http://image.diku.dk/igel/paper/AItRBM-proof.pdf">An Introducton to Restricted Boltzmann Machines</a>
+		</ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/kFrv76ll1aY">Video</a></td>
+</tr>
+
+<tr class="lechead" _base_target="_blank">
+	<td colspan="6" _base_target="_blank">Module 2: Exact Inference</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Monday,<br>Jan 27</td>
+      	<td _base_target="_blank">
+	Lecture 4 (Eric) - <a href="./lectures/lecture4-Elimination.pdf">Slides</a>
+	<ul> 
+	    <li>Variable Elimination<br>
+	</ul>
+	</td>
+        <td _base_target="_blank">Pradeep Dasigi,<br/> 
+	    Soumya Batra,<br/>Manzil Zaheer<br>(<a href="scribe_notes/scribe_note_lecture4.pdf">Scribe Notes</a>)</td>
+      	<td _base_target="_blank">
+		Required: <br>	    
+	    <ul>
+	      <li>Jordan Textbook, Ch. 3
+	      </ul>
+	      Optional: <br>
+		<ul>
+		  <li>Koller and Friedman Textbook, Ch. 9
+		    </ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/04RSF8A3uWQ">Video</a></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wednesday,<br>Jan 29</td>
+      	<td _base_target="_blank">
+	Lecture 5 (Eric) - <a href="./lectures/lecture5-BP.pdf">Slides</a>
+	<ul> 
+	    <li>Sum-Product Message Passing<br>
+	</ul>
+	</td>
+        <td _base_target="_blank">Zhe Zhang,<br/> 
+	    Alex Loewi <br>(<a href="scribe_notes/scribe_note_lecture5.pdf">Scribe Notes</a>)</td>
+      	<td _base_target="_blank">
+		Required: <br>
+	    <ul>
+	      <li>Jordan Textbook, Ch. 4
+	      </ul>
+	      Optional: <br>
+		<ul>
+		  <li>Koller and Friedman Textbook, Ch. 10
+		    </ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/sxOi_6btnvY">Video</a></td>
+</tr>
+
+<tr class="lechead" _base_target="_blank">
+	<td colspan="6" _base_target="_blank">Module 3: Learning</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Monday,<br>Feb 3</td>
+      	<td _base_target="_blank">
+	Lecture 6 (Eric) - <a href="./lectures/lecture6-GLIM.pdf">Slides</a>
+	<ul> 
+	  <li>Generalized Linear Models
+	    <li>Maximum Likelihood Estimation
+	    <li>Sufficient Statistics
+	</ul>
+	</td>
+        <td _base_target="_blank">Alnur Ali,<br/> 
+	    Yipei Wang <br>(<a href="scribe_notes/scribe_note_lecture6.pdf">Scribe Notes</a>)</td>
+      	<td _base_target="_blank">
+		Required: <br>
+	    <ul>
+	      <li>Jordan Textbook, Ch. 8
+	      </ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/lvnpIyrHRFk">Video</a></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wednesday,<br>Feb 5</td>
+      	<td _base_target="_blank">
+	Lecture 7 (Eric) - <a href="./lectures/lecture7-LearningObs.pdf">Slides</a>
+	<ul> 
+	  <li>Learning in Fully Observed Bayesian Networks
+	</ul>
+	</td>
+        <td _base_target="_blank">Diyi Yang,<br/> 
+	    Zichao Yang<br>(<a href="scribe_notes/scribe_note_lecture7.pdf">Scribe Notes</a>)</td>
+      	<td _base_target="_blank">
+		Required: <br>
+	    <ul>
+	      <li>Jordan Textbook, Ch. 9, Sec. 9.1-9.2
+	      </ul>
+	      Optional: <br>
+		<ul>
+		  <li>Koller and Friedman Textbook, Ch. 17
+		    </ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/NM9J-MvPdeU">Video</a></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Monday,<br>Feb 10</td>
+      	<td _base_target="_blank">
+	Lecture 8 (Eric) - <a href="./lectures/lecture8-LearningObsMRF.pdf">Slides</a>
+	<ul> 
+	  <li>Learning in Fully Observed Markov Networks
+	</ul>
+	</td>
+        <td _base_target="_blank">Li Zhou,<br/> 
+	    Meng Song<br>(<a href="scribe_notes/scribe_note_lecture8.pdf">Scribe Notes</a>) </td>
+      	<td _base_target="_blank">
+		Required: <br>
+	    <ul>
+	      <li>Jordan Textbook, Ch. 9, Sec. 9.3-9.5
+	      </ul>
+	      Optional: <br>
+		<ul>
+		  <li>J. Lee and T. Hastie, <a href="http://jmlr.org/proceedings/papers/v31/lee13a.pdf">Structure Learning of Mixed Graphical Models</a>
+		  <li>H. Wallach, <a href="http://www.inference.phy.cam.ac.uk/hmw26/papers/crf_intro.pdf">Conditional Random Fields: An Introduction</a>
+		    </ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/9TJdlmKVMgA">Video</a></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wednesday,<br>Feb 12</td>
+      	<td _base_target="_blank">
+	Lecture 9 (Eric) - <a href="./lectures/lecture9-EM.pdf">Slides</a>
+	<ul>
+	  <li>The Expectation-Maximization Algorithm
+	</ul>
+	</td>
+        <td _base_target="_blank">Rohan Ramanath,<br/> 
+	    Rahul Goutam (<a href="scribe_notes/scribe_note_lecture9.pdf">Scribe Notes</a>) </td>
+      	<td _base_target="_blank">
+		Required: <br>
+	    <ul>
+	      <li>Jordan Textbook, Ch. 10
+	      </ul>
+	      Optional: <br>
+		<ul>
+		  <li>A. Dempster et al., <a href="http://web.mit.edu/6.435/www/Dempster77.pdf">Maximum Likelihood from Incomplete Data via the EM Algorithm</a>
+		    </ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/gx0Sok511RQ">Video</a></td>
+</tr>
+
+<tr class="lechead" _base_target="_blank">
+	<td colspan="6" _base_target="_blank">Module 4: Popular Graphical Models</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Monday,<br>Feb 17</td>
+      	<td _base_target="_blank">
+	Lecture 10 (Eric) - <a href="./lectures/lecture10-NetworkLearning.pdf">Slides</a>
+	<ul> 
+	  <li>Modeling Networks
+	  <li>Ising Models
+	    <li>Gaussian Graphical Models
+	</ul>
+	</td>
+        <td _base_target="_blank">Zhiding Yu,<br/> 
+	    Shanghang Zhang (<a href="scribe_notes/scribe_note_lecture10.pdf">Scribe Notes</a>) </td>
+      	<td _base_target="_blank">
+		Required: <br>
+	    <ul>
+	      <li>J. Friedman et al., <a href="http://biostatistics.oxfordjournals.org/content/9/3/432.full.pdf">Sparse Inverse Covariance Estimation with the Graphical Lasso</a>
+	      </ul>
+	      Optional: <br>
+		<ul>
+		  <li>A. Dempster, <a href="http://www.jstor.org/stable/2528966?origin=JSTOR-artinfo">Covariance Selection</a>
+		    <li>N. Meinshausen and P. Buhlmann, <a href="http://projecteuclid.org/download/pdfview_1/euclid.aos/1152540754">High-Dimensional Graphs and Variable Selection with the Lasso</a>
+		    </ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/q8vNcVmarcI">Video</a></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wednesday,<br>Feb 19</td>
+      	<td _base_target="_blank">
+	Lecture 11 (Eric) - <a href="./lectures/lecture11-FA&KF.pdf">Slides</a>
+	<ul>
+	  <li>Factor Analysis
+	    <li>State Space Models
+	</ul>
+	</td>
+        <td _base_target="_blank">Swabha Swayamdipta,<br/> 
+	    Dallas Card<br>(<a href="scribe_notes/scribe_note_lecture11.pdf">Scribe Notes</a>)</td>
+      	<td _base_target="_blank">
+		Required: <br>
+	    <ul>
+	      <li>Jordan Textbook, Ch. 14
+		<li>Jordan Textbook, Ch. 15
+	      </ul>
+	      Optional: <br>
+		<ul>
+		  <li>A. Ng, <a href="http://cs229.stanford.edu/notes/cs229-notes9.pdf">Factor Analysis Lecture Notes</a>
+		  <li>G. Welch and G. Bishop, <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.79.6578&rep=rep1&type=pdf">An Introduction to the Kalman Filter</a>
+		    </ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/MSFhkhhJ0ko">Video</a></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Friday,<br>Feb 21</td>
+      	<td _base_target="_blank">
+	Lecture 12 (Eric) - <a href="./lectures/lecture12-CRF.pdf">Slides</a>
+	<ul> 
+	  <li>Conditional Random Fields
+    <li><font color = "red">Case Study: Image Segmentation in Computer Vision</font>
+	</ul>
+	</td>
+        <td _base_target="_blank">Qin Gao,<br/> 
+	    Siheng Chen<br>(<a href="scribe_notes/scribe_note_lecture12.pdf">Scribe Notes</a>)</td>
+      	<td _base_target="_blank">
+		Required: <br>
+	    <ul>
+		  <li>H. Wallach, <a href="http://www.inference.phy.cam.ac.uk/hmw26/papers/crf_intro.pdf">Conditional Random Fields: An Introduction</a>
+		    <li>F. Sha and F. Pereira, <a href="http://www-bcf.usc.edu/~feisha/pubs/shallow03.pdf">Shallow Parsing with Conditional Random Fields</a>
+	      </ul>
+	      Optional: <br>
+		<ul>
+		  <li>J. Lafferty et al., <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.26.803&rep=rep1&type=pdf">Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data</a>
+		    <li>S. Kumar and M. Hebert, <a href="http://www.sanjivk.com/DRF_IJCV.pdf">Discriminative Random Fields</a>
+		    </ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/jXOCwmC9pwo">Video</a></td>
+</tr>
+
+<tr class="lechead" _base_target="_blank">
+	<td colspan="6" _base_target="_blank">Module 5: Approximate Inference</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Monday,<br>Feb 24</td>
+      	<td _base_target="_blank">
+	Lecture 13 (Eric) - <a href="./lectures/lecture13-VI.pdf">Slides</a>
+	<ul> 
+	  <li>Variational Inference: Loopy Belief Propagation
+	</ul>
+	</td>
+        <td _base_target="_blank">Rajarshi Das,<br/> 
+	    Zhengzhong Liu,<br>Dishan Gupta (<a href="scribe_notes/scribe_note_lecture13.pdf">Scribe Notes</a>)</td>
+      	<td _base_target="_blank">
+	  Required: None <br>
+	  Optional: <br>
+	      <ul>
+		<li>Koller and Friedman Textbook, Ch. 11
+		<li>M. Jordan et al., <a href="http://www.cs.berkeley.edu/~jordan/papers/variational-intro.pdf">An Introduction to Variational Inference for Graphical Models</a>
+	      <li>M. Wainwright and M. Jordan, <a href="http://www.eecs.berkeley.edu/~wainwrig/Papers/WaiJor08_FTML.pdf">Graphical Models, Exponential Families, and Variational Inference</a>, Sec. 4.1
+		 <!-- <li>K. Murphy et al., <a href="http://people.cs.ubc.ca/~murphyk/Papers/loopy_uai99.pdf">Loopy Belief Propagation for Approximate Inference: An Empirical Study</a> -->
+		</ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/28NEr1ACxgg">Video</a></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Monday,<br>Mar 3</td>
+      	<td _base_target="_blank">
+	Lecture 14 (Eric) - <a href="./lectures/lecture14-VI2.pdf">Slides</a>
+	<ul> 
+	  <li>Variational Inference: Mean Field Approximation
+	</ul>
+	</td>
+        <td _base_target="_blank">Amos Ng,<br/> 
+	    Yu-Hsin Kuo (<a href="scribe_notes/scribe_note_lecture14.pdf">Scribe Notes</a>)</td>
+      	<td _base_target="_blank">
+		Required: <br>
+	    <ul>
+	      <li>M. Wainwright and M. Jordan, <a href="http://www.eecs.berkeley.edu/~wainwrig/Papers/WaiJor08_FTML.pdf">Graphical Models, Exponential Families, and Variational Inference</a>, Sec. 2.6 and Sec. 5
+	      </ul>
+	      Optional: <br>
+		<ul>
+		  <li>E. Xing et al., <a href="http://www.cs.berkeley.edu/~russell/papers/uai03-gmf.pdf">A Generalized Mean Field Algorithm for Variational Inference in Exponential Families</a>
+		    </ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/d4OoGHkz1vI">Video</a></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wednesday,<br>Mar 5</td>
+      	<td _base_target="_blank">
+	Lecture 15 (Eric) - <a href="./lectures/lecture15-MF-topicmodel.pdf">Slides</a>
+	<ul> 
+	  <li>Variational Inference: Theory
+    <li><font color="red">Case Study: Learning Topic Models</font>
+	</ul>
+	</td>
+        <td _base_target="_blank">Jingwei Shen,<br/> 
+	    Jiwei Li (<a href="scribe_notes/scribe_note_lecture15.pdf">Scribe Notes</a>)</td>
+      	<td _base_target="_blank">
+		Required: <br>
+	    <ul>
+	      <li>M. Wainwright and M. Jordan, <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.61.4581&rep=rep1&type=pdf">Variational Inference in Graphical Models: The View from the Marginal Polytope</a>
+		<li>D. Blei et al., <a href="http://books.nips.cc/papers/files/nips14/AA53.pdf">Latent Dirichlet Allocation</a>
+	      </ul>
+	      Optional: <br>
+		<ul>
+	      <li>M. Wainwright and M. Jordan, <a href="http://www.eecs.berkeley.edu/~wainwrig/Papers/WaiJor08_FTML.pdf">Graphical Models, Exponential Families, and Variational Inference</a>, Sec. 3 and Sec. 4
+
+        <li>A. Ahmed and E. P. Xing, <a href="http://www.cs.cmu.edu/~epxing/papers/aistats2007Final.pdf">On Tight Approximate Inference of Logistic-Normal
+          Admixture Model</a>.
+
+		    </ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/2x8slXsyjBs">Video</a></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Monday,<br>Mar 10</td>
+      	<td _base_target="_blank">
+          No Lecture due to CMU spring break.
+	</td>
+        <td _base_target="_blank">
+      	<td _base_target="_blank">
+	</td>
+        <td _base_target="_blank"></td>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wednesday,<br>Mar 12</td>
+      	<td _base_target="_blank">
+          No Lecture due to CMU spring break.
+	</td>
+        <td _base_target="_blank">
+      	<td _base_target="_blank">
+	</td>
+        <td _base_target="_blank"></td>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Monday,<br>Mar 17</td>
+      	<td _base_target="_blank">
+		Lecture 16 (Eric) - <a href="./lectures/lecture16-MC.pdf">Slides</a>
+		<ul> 
+		  <li>Approximate Inference: Monte Carlo Methods
+		</ul>
+	</td>
+        <td _base_target="_blank">Calvin Murdock,</br>Veeru Sadhanala,</br>Luis Tandalla (<a href="scribe_notes/scribe_note_lecture16.pdf">Scribe Notes</a>)
+      	<td _base_target="_blank">
+		Required:
+		<ul>
+		<li> <a href="http://www.cs.toronto.edu/~mackay/itprnn/book.pdf">Mackay Textbook</a>, Ch. 29.1 - 29.3
+		<li> Jordan Textbook, Ch. 21
+		</ul>
+		Optional:
+		<ul>
+		<li> D. Mackay, <a href="http://www.inference.phy.cam.ac.uk/mackay/erice.pdf">Introduction to Monte Carlo Methods</a>
+		</ul>
+	</td><td _base_target="_blank"> <a href="https://youtu.be/gWxsRgtcOYo">Video</a>
+        </td>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Friday,<br>Mar 21</td>
+      	<td _base_target="_blank">
+		Lecture 17 (Eric) - <a href="./lectures/lecture17-MCMC.pdf">Slides</a>
+		<ul> 
+		  <li>Approximate Inference: Markov Chain Monte Carlo (MCMC)
+      <li><font color = "red">Case Study: Learning Topic Models</font>
+		</ul>
+	</td>
+        <td _base_target="_blank">Karanhaar Singh,</br>Dan Schwartz,</br>Felipe Hernandez (<a href="scribe_notes/scribe_note_lecture17.pdf">Scribe Notes</a>)
+      	<td _base_target="_blank">
+		Required:
+		<ul>
+		<li> <a href="http://www.cs.toronto.edu/~mackay/itprnn/book.pdf">Mackay Textbook</a>, Chpt 29.4 - 29.10
+		<li> T. Griffiths and M. Steyvers, <a href="http://psiexp.ss.uci.edu/research/papers/sciencetopics.pdf">Finding Scientific Topics</a>
+		</ul>
+		Optional:
+		<ul>
+		<li> D. Mackay, <a href="http://www.inference.phy.cam.ac.uk/mackay/erice.pdf">Introduction to Monte Carlo Methods</a>
+		</ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/Clne2g-PS08">Video</a></td>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Monday,<br>Mar 24</td>
+      	<td _base_target="_blank">
+          Lecture 18 (Eric) - <a href="./lectures/lecture18-AdvMCMC.pdf">Slides</a>
+		<ul> 
+		  <li> Advanced Topics in MCMC
+		</ul>
+	</td>
+        <td _base_target="_blank">Jessica Chemali,</br>Seungwhan Moon (<a href="scribe_notes/scribe_note_lecture18.pdf">Scribe Notes</a>)
+      	<td _base_target="_blank">
+		Required:
+		<ul>
+
+    <li>D. Hastie and P. Green, <a
+      href="http://www.seas.harvard.edu/courses/cs281/papers/hastie-green-2011.pdf">Model
+      Choice using Reversible Jump Markov Chain Monte Carlo</a>
+
+    <li>A. Dubey, S. Williamson and E. Xing, <a
+      href="http://www.cs.cmu.edu/~epxing/papers/2013/Dubey_Williamson_Xing_ICML13.pdf">Parallel
+      Markov Chain Monte Carlo for Nonparametric Mixture Models</a>
+
+		</ul>
+		Optional:
+		<ul>
+		<li>A. Doucet and A. Johansen, <a href="http://www.cs.ubc.ca/~arnaud/doucet_johansen_tutorialPF.pdf">A Tutorial on Particle Filtering and Smoothing: Fifteen Years Later</a>, Ch. 3
+		</ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/Z2jLjnkTdRQ">Video</a></td>
+
+<tr class="lechead" _base_target="_blank">
+	<td colspan="6" _base_target="_blank">Module 6: Nonparametric Bayesian Models </td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wednesday,<br>Mar 26</td>
+      	<td _base_target="_blank">
+          Lecture 19 (Eric) - <a href="./lectures/lecture19-npbayes.pdf">Slides</a>
+		<ul> 
+		  <li> Dirichlet Processes
+		</ul>
+	</td>
+        <td _base_target="_blank">Carl Malings,</br>Jingkun Gao (<a href="scribe_notes/scribe_note_lecture19.pdf">Scribe Notes</a>)
+      	<td _base_target="_blank">
+		Required:
+		<ul>
+		  <li>Y. W. Teh, <a href="http://www.gatsby.ucl.ac.uk/~ywteh/research/npbayes/dp.pdf">Dirichlet Process</a><br>
+		      <li>T. Ferguson, <a href="http://www.cis.upenn.edu/~taskar/courses/cis700-sp08/papers/ferguson.pdf">A Bayesian Analysis of Some Nonparametric Problems</a><br>
+			  <li>J. Sethuraman, <a href="https://www.cs.princeton.edu/courses/archive/fall07/cos597C/readings/Sethuraman1994.pdf">A Constructive Definition of Dirichlet Priors</a><br>
+			    </ul>
+			    Optional:
+			    <ul>
+			      <li>C. Rasmussen, <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.86.3414">Gaussian Processes for Machine Learning</a>
+		</ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/bCFeDt0T7m4">Video</a></td>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Monday,<br>Mar 31</td>
+      	<td _base_target="_blank">
+          Lecture 20 (Eric) - <a href="./lectures/lecture20-HDP.pdf">Slides</a>
+		<ul> 
+		  <li> Hierarchical Dirichlet Processes
+		  <li><font color = "red">Case Study: Genetic Inference of the World Population</font>
+      	<td _base_target="_blank">Lavanya Viswanathan,<br>Manaal Faruqui (<a href="scribe_notes/scribe_note_lecture20.pdf">Scribe Notes</a>)
+      	<td _base_target="_blank">
+		Required:
+<ul>
+  <li>K. A. Sohn and E. Xing, <a href="http://www.cs.cmu.edu/~epxing/papers/2009/sohn_xing_aoas2009.pdf">A Hierarchical Dirichlet Process Mixture Model for Haplotype Reconstruction from Multi-Population Data</a>
+</ul>
+Optional:
+<ul>
+<li>Y. W. Teh, M. Jordan, M. Beal, and D. Blei, <a href="http://www.cs.berkeley.edu/~jordan/papers/hdp.pdf">Hierarchical Dirichlet Processes</a>
+<li>E. Xing, R. Sharan, and M. Jordan, <a href="http://www.cs.cmu.edu/~epxing/papers/Old_papers/ghap_ICML.pdf">Bayesian Haplotype Inference via the Dirichlet Process</a>
+</ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/cY9xAr7n5L8">Video</a></td>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wednesday,<br>Apr 2</td>
+      	<td _base_target="_blank">
+          Lecture 21 (Eric) - <a href="./lectures/lecture21-IBP.pdf">Slides</a>
+		<ul> 
+		  <li> The Indian Buffet Process
+      	<td _base_target="_blank">Jesse Dodge,<br>Nijith Jacob (<a href="scribe_notes/scribe_note_lecture21.pdf">Scribe Notes</a>)
+      	<td _base_target="_blank">
+		Required:
+<ul>
+  <li>T. Griffiths and Z. Ghahramani, <a href="http://jmlr.org/papers/volume12/griffiths11a/griffiths11a.pdf">The Indian Buffet Process: An Introduction and Review</a>
+</ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/5cqjKT6HOi4">Video</a></td>
+
+<tr class="lechead" _base_target="_blank">
+	<td colspan="6" _base_target="_blank">Module 7: Spectral Methods for Graphical Models</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Monday,<br>Apr 7</td>
+      	<td _base_target="_blank">
+          Lecture 22 (Eric) - <a href="./lectures/lecture22-HSEmbedding.pdf">Slides</a>
+		<ul> 
+		  <li> Hilbert Space Embeddings of Distributions 
+      	<td _base_target="_blank">Sujay Kumar Jauhar,<br>Zhiguang Huo (<a href="scribe_notes/scribe_note_lecture22.pdf">Scribe Notes</a>)
+      	<td _base_target="_blank">
+		Required:
+		<ul>
+		<li>L. Song, <a href="http://www.cc.gatech.edu/~lsong/papers/lesong_thesis.pdf">Learning via Hilbert Space Embeddings of Distributions</a>, Ch. 2.1-2.2 and Ch. 3.1-3.2
+		  </ul>
+<ul>
+</ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/3-gMpNhgNJw">Video</a></td>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wednesday,<br>Apr 9</td>
+      	<td _base_target="_blank">
+          Lecture 23 (Eric) - <a href="./lectures/lecture23-KernelGM.pdf">Slides</a>
+		<ul> 
+		  <li> Kernel Graphical Models
+      	<td _base_target="_blank">Xiang Li,<br>Ran Chen (<a href="scribe_notes/scribe_note_lecture23.pdf">Scribe Notes</a>)
+      	<td _base_target="_blank">
+		Required:
+<ul>
+  <li> L. Song, J. Huang, A. Smola, and K. Fukumizu, <a href="http://www.stanford.edu/~jhuang11/research/pubs/icml09/icml09.pdf">Hilbert Space Embeddings of Conditional Distributions with Applications to Dynamical Systems</a>
+</ul>
+Optional:
+<ul>
+<li>L. Song, A. Gretton, and C. Guestrin, <a href="http://www.cc.gatech.edu/~lsong/papers/SonGreGue10.pdf">Nonparametric Tree Graphical Models via Kernel Embeddings</a>
+<li>L. Song, A. Gretton, D. Bickson, Y. Low, and C. Guestrin, <a href="http://jmlr.org/proceedings/papers/v15/song11a/song11a.pdf">Kernel Belief Propagation</a>
+</ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/hGbKoDD9KAg">Video</a></td>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Monday,<br>Apr 14</td>
+      	<td _base_target="_blank">
+          Lecture 24 (Eric) - <a href="./lectures/lecture24-SpectrumGM.pdf">Slides</a>
+		<ul> 
+		  <li>Spectral Algorithms for Graphical Models
+		    <li><font color = "red">Case Study: Parsing in Natural Languages</font>
+      	<td _base_target="_blank">Yuan Xie,<br>Yulong Pei,<br>Junier Oliva (<a href="scribe_notes/scribe_note_lecture24.pdf">Scribe Notes</a>)
+      	<td _base_target="_blank">
+		Required:
+<ul>
+<li>D. Hsu, S. Kakade, and T. Zhang <a href="http://arxiv.org/pdf/0811.4413v6.pdf">A Spectral Algorithm for Learning Hidden Markov Models</a>
+</ul>
+Optional:
+<ul>
+<li>L. Song et al., <a href="http://arxiv.org/pdf/1401.3940v1.pdf">Nonparametric Latent Tree Graphical Models: Inference, Estimation, and Structure Learning</a>
+<li>A. Parikh, L. Song, and E. Xing, <a href="http://www.cs.cmu.edu/~epxing/papers/2011/Parikh_Song_Xing_ICML11.pdf">A Spectral Algorithm for Latent Tree Graphical Models</a>
+<li>L. Song et al., <a href="http://www.icml2010.org/papers/495.pdf">Hilbert Space Embeddings of Hidden Markov Models</a>
+<li>L. Song et al., <a href="http://www.cs.cmu.edu/~apparikh/papers/Song_Parikh_Xing_NIPS11.pdf">Kernel Embeddings of Latent Tree Graphical Models</a>
+<li>S. Cohen et al., <a href="http://www.cs.columbia.edu/~scohen/acl12spectral.pdf">Spectral Learning of Latent-Variable PCFGs</a>
+</ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/TR9kwSA42rY">Video</a></td>
+
+<tr class="lechead" _base_target="_blank">
+	<td colspan="6" _base_target="_blank">Module 8: Structured Sparsity</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wednesday,<br>Apr 16</td>
+      	<td _base_target="_blank">
+          Lecture 25 (Eric) - <a href="./lectures/lecture25-StructSparse.pdf">Slides</a>
+		<ul> 
+		  <li>Graph-Induced Structured Input-Output Methods
+		    <li><font color = "red">Case Study: Disease Association Analysis</font>
+      	<td _base_target="_blank">Alok Kothari,<br>Haoyu Wang (<a href="scribe_notes/scribe_note_lecture25.pdf">Scribe Notes</a>)
+      	<td _base_target="_blank">
+		Required:
+<ul>
+<li>S. Kim and E. Xing, <a href="http://www.plosgenetics.org/article/fetchObject.action?uri=info%3Adoi%2F10.1371%2Fjournal.pgen.1000587&representation=PDF">Statistical Estimation of Correlated Genome Associations to a Quantitative Trait Network</a>
+<li>X. Chen et al., <a href="http://projecteuclid.org/download/pdfview_1/euclid.aoas/1339419614">Smoothing Proximal Gradient Method for General Structured Sparse Regression</a>
+</ul>
+Optional:
+<ul>
+<li>S. Kim and E. Xing, <a href="http://www.cs.cmu.edu/~sssykim/papers/2010_ICML_tlasso.pdf">Tree-Guided Group Lasso for Multi-Task Regression with Structured Sparsity</a>
+</ul>
+	</td>
+        <td _base_target="_blank"><a href="https://youtu.be/7nGfdtvTQgQ">Video</a></td>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Monday,<br>Apr 21</td>
+      	<td _base_target="_blank">
+          Lecture 26 (Eric) - <a href="./lectures/lecture26-Spam.pdf">Slides</a>
+		<ul> 
+		  <li>Structured Sparse Additive Models
+      	<td _base_target="_blank">Ruikun Luo,<br>Hao Zhang (<a href="scribe_notes/scribe_note_lecture26.pdf">Scribe Notes</a>)
+      	<td _base_target="_blank">
+		Required:
+<ul>
+<li>P. Ravikumar, J. Lafferty, H. Liu, and L. Wasserman, <a href="http://arxiv.org/pdf/0711.4555.pdf">Sparse Additive Models</a>
+<li>J. Yin, X. Chen, and E. Xing, <a href="http://icml.cc/2012/papers/463.pdf">Group Sparse Additive Models</a>
+</ul>
+Optional:
+<ul>
+<li>T. Hastie and R. Tibshirani, <a href="http://www.stanford.edu/~hastie/Papers/gam.pdf">Generalized Additive Models</a>
+</ul>
+</td>
+  <td _base_target="_blank"><a href="https://youtu.be/nOYIKRzVA6w">Video</a></td>
+
+<tr class="lechead" _base_target="_blank">
+	<td colspan="6" _base_target="_blank">Module 9: Scalable Algorithms for Graphical Models</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wednesday,<br>Apr 23</td>
+      	<td _base_target="_blank">
+          Lecture 27 (Qirong, Avi) - <a href="./lectures/lecture27-ParallelMCMC.pdf">Slides</a>
+		<ul> 
+		  <li>Distributed MCMC
+      	<td _base_target="_blank">Pengtao Xie,<br>Khoa Luu (<a href="scribe_notes/scribe_note_lecture27.pdf">Scribe Notes</a>)
+      	<td _base_target="_blank">
+		Required:
+<ul>
+<li>J. Gonzalez et al., <a href="http://machinelearning.wustl.edu/mlpapers/paper_files/AISTATS2011_GonzalezLGG11.pdf">Parallel Gibbs Sampling: From Colored Fields to Thin Junction Trees</a>
+</ul>
+Optional:
+<ul>
+<li>A. Doucet and A. Johansen, <a href="http://www.cs.ubc.ca/~arnaud/doucet_johansen_tutorialPF.pdf">A Tutorial on Particle Filtering and Smoothing: Fifteen Years Later</a>
+<li>S. Williamson, A. Dubey, and E. Xing, <a href="http://www.cs.cmu.edu/~sinead/WilliamsonDubeyXing2013.pdf">Parallel Markov Chain Monte Carlo for Nonparametric Mixture Models</a>
+</ul>
+</td>
+  <td _base_target="_blank"><a href="https://youtu.be/wZSw6SE-7pk">Video</a></td>
+
+<tr class="lechead" _base_target="_blank">
+	<td colspan="6" _base_target="_blank">Module 10: Posterior Regularization and Max-Margin Graphical Models</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Monday,<br>Apr 28</td>
+      	<td _base_target="_blank">
+          Lecture 28 (Eric) - <a href="./lectures/lecture28-M3N.pdf">Slides</a>
+		<ul> 
+		  <li>Maximum-Margin Learning of Graphical Models
+      	<td _base_target="_blank">T. H. Ngan Le,<br>Felipe Hernandez (<a href="scribe_notes/scribe_note_lecture28.pdf">Scribe Notes</a>)
+      	<td _base_target="_blank">
+		Required:
+<ul>
+<li>B. Taskar, C. Guestrin, and D. Koller, <a href="http://papers.nips.cc/paper/2397-max-margin-markov-networks.pdf">Max-Margin Markov Networks</a>
+<li>J. Zhu and E. Xing, <a href="http://www.cs.cmu.edu/~epxing/papers/2009/zhu_xing_JMLR09.pdf">Maximum Entropy Discrimination Markov Networks</a>
+</ul>
+Optional:
+<ul>
+<li>J. Zhu and E. Xing, <a href="http://www.cs.cmu.edu/~epxing/papers/2009/zhu_xing_icml09.pdf">On Primal and Dual Sparsity of Markov Networks</a>
+<li>J. Zhu, E. Xing, and B. Zhang, <a href="http://www.cs.cmu.edu/~epxing/papers/2008/PoMEN_NewNotation.pdf">Partially Observed Maximum Entropy Discrimination Markov Networks</a>
+</ul>
+</td>
+  <td _base_target="_blank"><a href="https://youtu.be/xZ7-SCmdRfU">Video</a>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wednesday,<br>Apr 30</td>
+      	<td _base_target="_blank">
+          Lecture 29 (Eric) - <a href="./lectures/lecture29-RegBayes.pdf">Slides</a>
+		<ul> 
+		  <li>Posterior Regularization: An Integrative Paradigm for Learning Graphical Models
+      	<td _base_target="_blank">Felix Juefei Xu,<br>Abhishek Chugh (<a href="scribe_notes/scribe_note_lecture29.pdf">Scribe Notes</a>)
+      	<td _base_target="_blank">
+		Required:
+<ul>
+<li>J. Zhu, A. Ahmed, and E. Xing, <a href="http://sailing.cs.cmu.edu/pdf/2009/zhu2-icml09.pdf">MedLDA: Maximum Margin Supervised Topic Models for Regression and Classification</a>
+<li>J. Zhu, N. Chen, and E. Xing, <a href="http://www.cs.cmu.edu/~epxing/Class/10708-13/reading/ilsvm_revision_1st_eric7.pdf">Bayesian Inference with Posterior Regularization and Applications to Infinite Latent SVMs</a>
+</ul>
+</td>
+  <td _base_target="_blank"><a href="https://youtu.be/ts-78hBYl2o">Video</a></td>
+
+</tbody>
+</table>
+
+
+<!--
+
+<tr class="lechead" _base_target="_blank">
+	<td colspan="6" _base_target="_blank">Module 1: Representation</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+      <td _base_target="_blank">Wed 16th Jan</td>
+      <td _base_target="_blank">
+Lecture 2 (Eric):
+Undirected GM: Markov Random Fields<br>
+<a href="./lecture/lecture2-MRFrepresentation.pdf">Slides</a>
+</td>
+      <td _base_target="_blank">
+<ul><li>Chunlei Liu (andrew id:chl56)</li>
+<li>Ahmed Hefny (ahefny) </li>
+<li><a href="lecture/scribe1.pdf">Scribe Notes</a></li>
+</ul>
+</td>
+      <td _base_target="_blank"></td>
+      <td _base_target="_blank">
+Required: <br>
+<ul>
+<li>Koller and Friedman: <a href="./reading/Ch 3.pdf">Chpt 3</a> (The Bayesian Network Representation) <br>
+<li> Koller and Friedman: <a href="./reading/Ch 4.pdf">Chpt 4</a> (Undirected Graphical Models)
+</ul>
+Optional: <br>
+<ul>
+<li> <a  href="http://www.cis.upenn.edu/%7Epereira/papers/crf.pdf">Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data</a>
+</ul>
+</td>
+      <td _base_target="_blank"></td>
+</tr>
+    
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Mon 21st Jan</td>
+      	<td _base_target="_blank"><font color="red">No class</font></td>
+        <td _base_target="_blank"></td>
+      	<td _base_target="_blank"></td>
+        <td _base_target="_blank"></td>
+      	<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Wed 23rd Jan</td>
+      	<td _base_target="_blank">
+Lecture 3 (Eric):
+A unified view of BN and MRF<br>
+<a href="lecture/lecture3-BN&MRF.pdf">Slides</a>
+</td>
+        <td _base_target="_blank">
+<ul>
+<li>Zhen Tang (zhent) </li>
+<li>William Chan (wchan2) </li>
+<li><a href="lecture/scribe2.pdf">Scribe Notes</a></li>
+</ul>
+</td>
+        <td _base_target="_blank"></td>
+    	<td _base_target="_blank">
+Required: <br>
+<ul>
+<li> Koller and Friedman: Chpt 4.5
+</ul>
+Optional: <br>
+<ul>
+<li>Pseudo-Likelihood Based Structure Estimation using Neighborhood Estimation: <a href="http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.aos/1152540754"> Neighborhood Selection in Gaussian Graphical Models</a> <br>
+<li>Likelihood Based Structure Estimation of GGMs:  <a href="http://www-stat.stanford.edu/~tibs/glasso/">Glasso</a><br>
+</ul>
+</td>
+      	<td _base_target="_blank"></td>
+</tr>
+
+
+<tr class="lechead" _base_target="_blank">
+        <td colspan="6" _base_target="_blank">Module 2: Basic Inference and Learning Methods</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Mon 28th Jan</td>
+      	<td _base_target="_blank">
+Lecture 4 (Eric): 
+Exact Inference (1): Variable Elimination<br>
+<a href="lecture/lecture4-Elimination.pdf">Slides</a>
+</td>
+        <td _base_target="_blank">
+<ul>
+<li>Georg Schonherr (gschoenh) </li>
+<li>Micol Marchetti-Bowick (mmarchet) </li>
+<li><a href="lecture/scribe3.pdf">Scribe Notes</a></li>
+</ul>
+</td>
+        <td _base_target="_blank"></td>
+        <td _base_target="_blank">
+Required: 
+<ul>
+<li>Koller and Friedman, Chpt 9.1, 9.2, 9.3, 9.4<br>
+</ul>
+</td>
+        <td _base_target="_blank"> <br> </td>
+</tr>
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Wed 30th Jan</td>
+      	<td _base_target="_blank">
+Lecture 5 (Eric):
+Exact Inference (2): Belief Propagation<br>
+<a href="lecture/lecture5-BP.pdf">Slides</a>
+</td>
+        <td _base_target="_blank">
+<ul>
+<li>Da-Cheng Juan (djuan) </li>
+<li>Jinliang Wei (jinlianw)</li>
+<li><a href="lecture/scribe4.pdf">Scribe Notes</a></li>
+</ul>
+</td>
+        <td _base_target="_blank"></td>
+        <td _base_target="_blank">
+Required:
+<ul>
+<li>Koller and Friedman Chpt. 10.1, 10.2, 10.3<br>
+</ul>
+Optional:
+<ul>
+<li>A useful tutorial is <a href="http://www.ski.org/Rehab/Coughlan_lab/General/TutorialsandReference/BPtutorial.pdf">here</a>.
+</ul>
+<br> </td>
+        <td _base_target="_blank"></td>
+</tr>
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Mon 4th Feb</td>
+      	<td _base_target="_blank">
+Lecture 6 (Eric):
+Generalized Linear Models and sufficient statistics 
+<a href="lecture/lecture6-GLIM.pdf">Slides</a>
+</td>
+        <td _base_target="_blank"> 
+<ul>
+<li>Thom Popovici (dpopovic) </li>
+<li>Huan-Kai Peng (huankaip) </li>
+<li><a href="lecture/scribe5.pdf">Scribe Notes</a></li>
+</ul>
+</td>
+        <td _base_target="_blank"> </td>
+        <td _base_target="_blank"> 
+Required:
+<ul>
+<li>Koller and Friedman: Chpt 17.2, 17.3, 17.4 (Particularly 17.4.4: MAP Estimation)
+</ul>
+Optional:
+<ul>
+<li><a href="http://projecteuclid.org/DPubS/Repository/1.0/Disseminate?view=body&id=pdf_1&handle=euclid.aos/1035844981">Parameter Priors for Directed Acyclic Graphical Models and the Characterization of Several Probability Distributions</a>
+<li><a href="http://projecteuclid.org/DPubS/Repository/1.0/Disseminate?view=body&id=pdf_1&handle=euclid.aos/1069362752">A Characterization of the Dirichlet Distribution Through Global and Local Parameter Independence</a>
+</ul>
+</td>
+        <td _base_target="_blank"> </td>
+</tr>
+
+
+
+
+
+<tr class="lecture" _base_target="_blank">
+       	<td _base_target="_blank">Wed 6th Feb</td>
+        <td _base_target="_blank">
+Lecture 7 (Eric):
+Learning (1): Fully observed BN<br>
+<a href="lecture/lecture7-LearningObs.pdf">Slides</a>
+</td>
+        <td _base_target="_blank"> 
+<ul>
+<li>Milad Memarzadeh (mmemarza) </li>
+<li>Shen, Xiaolong (xiaolons)</li>
+<li><a href="lecture/scribe6.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank"> </td>
+        <td _base_target="_blank"> 
+Required:
+<ul>
+<li>Koller and Friedman: Chpt 17.1, 17.3
+</ul> 
+Optional:
+<ul>
+<li>Structural learning using neighborhood selection:<a href="http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.aos/1152540754">High-dimensional graphs and variable selection with the Lasso</a></li>
+<li>Chow-Liu tree seminal paper:<a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1054142">Approximating discrete probability distributions with dependence trees</a></li>
+</td>
+        <td _base_target="_blank"> </td>
+</tr>
+
+
+
+
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Mon 11th Feb</td>
+      	<td _base_target="_blank">
+Lecture 8 (Eric):
+Learning (2): Fully observed MRF<br>
+<a href="lecture/lecture8-LearningObsMRF-annotation.pdf">Annotated Slides</a>
+</td>
+        <td _base_target="_blank"> 
+<ul>
+<li>Rishi Chandy (rishic)</li>
+<li>AJ Sedgewick (asedgewi)</li>
+<li><a href="lecture/scribe7.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank">
+</ul>
+        <td _base_target="_blank">
+Required:
+<ul>
+<li>Jordan: Chpt 9, 20
+</ul>
+Optional:
+<ul>
+<li>Koller and Friedman: Chpt 20.1, 20.2, 20.3</li>
+<li><a href="http://www-stat.stanford.edu/~tibs/glasso/">Graphical lasso</a></li>
+</ul>
+</td>
+        <td _base_target="_blank"></td>
+</tr>
+
+
+
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Wed 13th Feb</td>
+      	<td _base_target="_blank">
+Lecture 9 (Eric):
+Learning (3): EM algorithm
+<a href="lecture/lecture9-EM.pdf">Slides</a>
+</td>
+        <td _base_target="_blank"> 
+<ul>
+<li>Mrinmaya Sachan (mrinmays) </li>
+<li>Phani Gadde (pgadde)</li>
+<li> Viswanathan, Sripradha (sripradv)</li>
+<li><a href="lecture/scribe9.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank">
+</ul>
+
+        <td _base_target="_blank">
+Required:
+<ul>
+<li> Koller and Friedman: Chpt. 19.1, 19.2.2, 19.2.3
+</ul>
+Optional:
+<ul>
+<li><a href="http://www.cs.toronto.edu/~hinton/absps/emk.pdf">Some interesting aspects of EM</a>
+</ul>
+</td>
+        <td _base_target="_blank"></td>
+
+<br>
+</tr>
+
+
+
+<tr class="lechead" _base_target="_blank">
+        <td colspan="6" _base_target="_blank">Module 3 : Case Studies I: Popular Graphical Models</td>
+</tr>
+
+
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Mon 18th Feb</td>
+      	<td _base_target="_blank">
+Lecture 10 (Eric): 
+Gaussian graphical models and Ising models: modeling networks<br>
+<a href="lecture/lecture10-NetworkLearning.pdf">Slides</a>
+</td>
+        <td _base_target="_blank">
+<ul><li>Kartik Goyal (kartikgo) </li>
+<li><a href="lecture/scribe10.pdf">Scribe Notes</a></li>
+</td>
+        <td _base_target="_blank"></td>
+        <td _base_target="_blank">
+Required:
+<ul>
+<li><a href="http://www.jstor.org/stable/2528966?origin=JSTOR-artinfo"> Covariance Selection - the original GGM paper by Dempster</a>
+<li><a href="http://biostatistics.oxfordjournals.org/cgi/content/abstract/kxm045">Glasso</a>
+</ul>
+Highly Recommended:
+<ul>
+<li><a href="http://www.cs.cmu.edu/~epxing/papers/2010/kolar_song_xing_aoas10.pdf">Estimating Time-Varying Networks</a>, Annals of Applied Statistics, Vol. 4, No. 1, 94 - 123, 2010 (<a href="http://arxiv.org/abs/0812.5087">earlier version</a>).
+<li><a href="http://bioinformatics.oxfordjournals.org/content/27/13/i196.short">TREEGL: reverse engineering tree-evolving gene networks underlying developing biological lineages</a>
+</ul>
+Optional:
+<ul>
+<li><a href="http://projecteuclid.org/DPubS?verb=Display&version=1.0&service=UI&handle=euclid.aos/1152540754&page=record">Meinshausen-Buhlmann algorithm</a>
+<li><a href="http://portal.acm.org/citation.cfm?id=1390696">Model Selection Through Sparse Maximum Likelihood Estimation for Multivariate Gaussian </a>
+</ul>
+        <td _base_target="_blank">
+</tr>
+
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Wed 20th Feb</td>
+      	<td _base_target="_blank">
+Lecture 11 (Eric): 
+Factor Analysis and State-Space Models
+<a href="lecture/lecture11-FA&KF.pdf">Slides</a>
+</td>
+        <td _base_target="_blank"> 
+<ul>
+<li>Xuezhi Wang (xuezhiw)</li>
+<li> Adona Iosif (aiosif)</li>
+<li><a href="lecture/scribe11.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank">
+        <td _base_target="_blank">
+Required:
+<ul>
+<li> Koller and Friedman: Chpt 15.4
+<li> <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.79.6578&rep=rep1&type=pdf">An introduction to the Kalman filter </a>
+</ul>
+Highly Recommended:
+<ul>
+<li> <a href="http://cs229.stanford.edu/notes/cs229-notes9.pdf">Factor Analysis</a>
+<li> <a href="http://www.cs.cmu.edu/~lafferty/pub/dtm.pdf">Dynamic Topic Models</a>
+</ul>
+Optional:
+<ul>
+<li> <a href="http://portal.acm.org/citation.cfm?id=1121548">Variational Learning for Switching State-Space Models</a>
+<li> <a href="http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=1100844"> A discrete state-space model for linear image processing</a>
+</ul>
+        <td _base_target="_blank"></td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Mon 25th Feb</td>
+      	<td _base_target="_blank">
+Lecture 12 (Gunhee): 
+Conditional Random Fields<br>
+<font color="red">Case study: image segmentation in computer vision</font>
+<a href="lecture/lecture12-CRF.pdf">Slides</a>
+</td>
+        <td _base_target="_blank"> 
+<ul>
+<li>Salim Akhter Chowdhury (sachowdh)</li>
+<li>Jingwei Zhang (jingweiz)</li>
+<li><a href="lecture/scribe12.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank">
+        <td _base_target="_blank">
+Required:
+<ul>
+<li> <a href="http://www.cs.ubc.ca/~murphyk/Bayes/rabiner.pdf">A tutorial on HMMs</a>
+<li> <a href="http://people.cs.umass.edu/~wallach/technical_reports/wallach04conditional.pdf">CRF Tutorial by Hanna Wallach</a>
+</ul>
+Highly Recommended:
+<ul>
+<li> <a href="http://www.sanjivk.com/DRF_IJCV.pdf">Discriminative Random Fields</a>. Sanjiv Kumar and Martial Hebert.
+<li> <a href="http://www.nowozin.net/sebastian/cvpr2011tutorial/">Structured Prediction and Learning in Computer Vision</a>. CVPR 2011 Tutorial.
+</ul>
+Optional:
+<ul>
+<li> <a href="http://www.cis.upenn.edu/~pereira/papers/crf.pdf">The original CRF paper</a>
+<li> <a href="http://www-bcf.usc.edu/~feisha/pubs/shallow03.pdf">Shallow Parsing with CRFs</a>
+</ul>
+        <td _base_target="_blank">
+</tr>
+
+
+<tr class="lechead" _base_target="_blank">
+        <td colspan="6" _base_target="_blank">Module 4 : Approximate Inference</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Wed 27th Feb</td>
+      	<td _base_target="_blank">
+Lecture 13 (Eric):
+Variational Inference: Loopy Belief Propagation and Mean Field Approximation<br>
+<a href="lecture/lecture13-VI.pdf">Slides</a>
+</td>
+        <td _base_target="_blank"> 
+<ul>
+<li>Peter F. Schulam (pschulam)</li>
+<li>William Y. Wang (yww)</li>
+<li><a href="lecture/scribe13.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank">
+        <td _base_target="_blank">
+Required:
+<ul>
+<li> M. Jordan, Z. Ghahramani, T. Jaakkola, and L. Saul. <a href="http://www.springerlink.com/content/n811m25287935571/">An introduction to variational methods for graphical models</a>
+<li> E. P. Xing, M. I. Jordan, and S. Russell <a href="http://www.cs.berkeley.edu/~jordan/papers/xing-uai03.ps">A generalized mean field algorithm for variational inference in exponential families</a>
+</ul>
+Highly Recommended:
+<ul>
+<li> Murphy K., Weiss Y. and Jordan M. <a href="http://people.cs.ubc.ca/~murphyk/Papers/loopy_uai99.pdf">Loopy belief propagation for approximate inference: an empirical study</a>
+</ul>
+Optional:
+<ul>
+<li> <a href="http://www.eecs.berkeley.edu/~wainwrig/Papers/WaiJor08_FTML.pdf">Wainwright and Jordan</a>: Chpt 5
+<li> Koller and Friedman: Chpt 11
+</ul>
+        <td _base_target="_blank">
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Mon 4th Mar</td>
+      	<td _base_target="_blank">
+Lecture 14 (Eric/Chong):
+Variational Inference: Mean Field Approximation<br>
+<font color = "red">Case study: learning topic models</font>
+<a href="lecture/lecture14-MF-TopicModel.pdf">Slides</a>
+</td>
+        <td _base_target="_blank"> 
+<ul>
+<li>
+Miaomiao Wen (mwen)
+</li>
+<li>
+Lingpeng Kong (lingpenk)
+</li>
+<li><a href="lecture/scribe14.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank">
+        <td _base_target="_blank">
+Required:
+<ul>
+<li> Wainwright & Jordan. <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.61.4581&rep=rep1&type=pdf">Variational inference in graphical models: The view from the marginal polytope</a>
+<li> <a href="http://www.eecs.berkeley.edu/~wainwrig/Papers/WaiJor08_FTML.pdf">Wainwright and Jordan</a>: Chpts 3, 5
+</ul>
+Highly Recommended:
+<ul>
+<li> D. M. Blei, A. Y. Ng, M. I. Jordan <a href="http://www.cs.princeton.edu/~blei/papers/BleiNgJordan2003.pdf">Latent Dirichlet Allocation</a>
+<li>A. Ahmed and E. P. Xing <a href="http://www.sailing.cs.cmu.edu/pdf/2007/amraistat07.pdf">On Tight Approximate Inference of Logistic-Normal Admixture Model</a>
+<li>M. Hoffman, D. M. Blei, C. Wang, J. Paisley <a href="http://arxiv.org/pdf/1206.7051v1.pdf">Stochastic Variational Inference</a>
+</ul>
+        <td _base_target="_blank"></td>
+</tr>
+
+
+
+
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Wed 6th Mar</td>
+      	<td _base_target="_blank">
+Lecture 15 (Junming): 
+Theory of variational inference: inner and outer approximation<br>
+<a href="lecture/lecture15-Variational.pdf">Slides</a>
+</td>
+        <td _base_target="_blank">
+<ul>
+<li> Ankur Gandhe (ankurgan) </li>
+<li> Wei Zhang (weizhan1)</li>
+<li><a href="lecture/scribe15.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank">
+      <td _base_target="_blank">
+Required:
+<ul>
+<li> <a href="http://www.eecs.berkeley.edu/~wainwrig/Papers/WaiJor08_FTML.pdf">Wainwright and Jordan</a>: Chpt 3.4-3.6, 4.1, 5.1-5.3.
+</ul>
+      <td _base_target="_blank">
+</tr>
+
+
+
+
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Mon 11th Mar</td>
+      	<td _base_target="_blank"><font color="red">No class</font></td>
+        <td _base_target="_blank"></td>
+      	<td _base_target="_blank"></td>
+      	<td _base_target="_blank"></td>
+        <td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wed 13th Mar</td>
+      	<td _base_target="_blank"><font color="red">No class</font></td>
+        <td _base_target="_blank"></td>
+      	<td _base_target="_blank"></td>
+      	<td _base_target="_blank"></td>
+        <td _base_target="_blank"></td>
+</tr>
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Mon 18th Mar</td>
+      	<td _base_target="_blank">
+Lecture 16 (Eric): 
+Monte Carlo Methods<br>
+<a href="lecture/lecture16-MC.pdf">Slides</a>
+</td>
+        <td _base_target="_blank"> 
+<ul><li>Willie Neiswanger (wdn) </li>
+<li>Xiaohua Yan (xiaohuay) </li>
+<li><a href="lecture/scribe16.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank"> 
+        <td _base_target="_blank">
+Required:
+<ul>
+<li> <a href="http://www.cs.toronto.edu/~mackay/itprnn/book.pdf">Mackay</a>: Chpt 29.1 - 29.3
+</ul>
+Optional:
+<ul>
+<li> Mackay. <a href="http://www.inference.phy.cam.ac.uk/mackay/erice.pdf">Introduction to Monte Carlo Methods</a>
+</ul>
+        <td _base_target="_blank">
+</tr>
+
+
+
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Wed 20th Mar</td>
+      	<td _base_target="_blank">
+Lecture 17 (Qirong): Markov Chain Monte Carlo<br>
+<font color="red">Case study: learning topic models</font><br>
+<a href="lecture/lecture17-MCMC.pdf">Slides</a>
+</td>
+        <td _base_target="_blank"> 
+<ul>
+<li>Dougal Sutherland (dsutherl)</li>
+<li>Keerthiram Murugesan (kmuruges) </li>
+<li>Zhang, Ada June (ajzhang)</li>
+<li><a href="lecture/scribe1718.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank"> 
+        <td _base_target="_blank">
+Required:
+<ul>
+<li> <a href="http://www.cs.toronto.edu/~mackay/itprnn/book.pdf">Mackay</a>: Chpt 29.4 - 29.10
+</ul>
+Optional:
+<ul>
+<li> Mackay. <a href="http://www.inference.phy.cam.ac.uk/mackay/erice.pdf">Introduction to Monte Carlo Methods</a>
+</ul>
+        <td _base_target="_blank"></td>
+</tr>
+
+
+
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Mon 25th Mar</td>
+      	<td _base_target="_blank">
+Lecture 18 (Qirong): 
+Advanced topics in MCMC<br>
+<a href="lecture/lecture18-AdvMCMC.pdf">Slides</a>
+</td>
+        <td _base_target="_blank"> 
+<ul>
+<li>Dougal Sutherland (dsutherl)</li>
+<li>Keerthiram Murugesan (kmuruges) </li>
+<li>Zhang, Ada June (ajzhang)</li>
+<li><a href="lecture/scribe1718.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank">
+        <td _base_target="_blank">
+Required:
+<ul>
+<li> Hastie and Green. <a href="http://www.seas.harvard.edu/courses/cs281/papers/hastie-green-2011.pdf">Model Choice using Reversible Jump Markov Chain Monte Carlo</a>
+<li> Doucet and Johansen. <a href="http://www.cs.ubc.ca/~arnaud/doucet_johansen_tutorialPF.pdf">A Tutorial on Particle Filtering and Smoothing: Fifteen years later</a>: Chpt 3
+</ul>
+        <td _base_target="_blank"></td>
+</tr>
+
+
+<tr class="lechead" _base_target="_blank">
+        <td colspan="6" _base_target="_blank">
+Module 5 : Kernel Graphical Models and Spectral Methods</td>
+</tr>
+
+
+
+
+
+
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Wed 27th Mar</td>
+      	<td _base_target="_blank">
+Lecture 19 (Ankur): 
+Hilbert Space Embeddings of Distributions<br>
+<a href="lecture/lecture19-HSEmbedding.pdf">Slides</a>
+</td>
+        <td _base_target="_blank">
+<ul>
+<li>Chenyan Xiong (cx)</li>
+<li>Dena Marie Asta (dasta)</li>
+<li>Xu, Felix (juefeix)</li>
+<li><a href="lecture/scribe19.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank">
+        <td _base_target="_blank">
+Required:
+<ul>
+<li> Chpt. 2.1, 2.2, 3.1, 3.2 <br>
+L. Song. <a href="http://www.cc.gatech.edu/~lsong/papers/lesong_thesis.pdf">Learning via Hilbert space embedding of distributions</a><br>
+</ul>
+Optional:
+<ul>
+<li> L. Song, J. Huang, A. Smola, and K. Fukumizu. <a href="http://www.stanford.edu/~jhuang11/research/pubs/icml09/icml09.pdf">Hilbert Space Embedding of Conditional Distributions with Applications to Dynamical Systems</a><br>
+</ul>
+        <td _base_target="_blank">
+</tr>
+
+
+
+
+
+
+
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Mon 1th Apr</td>
+      	<td _base_target="_blank">
+Lecture 20 (Ankur): 
+Kernel Graphical Models
+<a href="lecture/lecture20-KernelGM.pdf">Slides</a>
+</td>
+        <td _base_target="_blank">
+<ul>
+<li>Gupta, Anika (anikag)</li>
+<li>Lan, Zhen-Zhong (lanzhzh)</li>
+<li><a href="lecture/scribe20.pdf">Scribe Notes</a></li>
+</ul>
+</td>
+        <td _base_target="_blank"></td>
+        <td _base_target="_blank">
+Required:
+<ul>
+<li> L. Song, J. Huang, A. Smola, and K. Fukumizu. <br>
+<a href="http://www.stanford.edu/~jhuang11/research/pubs/icml09/icml09.pdf">Hilbert Space Embedding of Conditional Distributions with Applications to Dynamical Systems</a><br>
+</ul>
+Optional:
+<ul>
+<li> L. Song, A. Gretton, and C. Guestrin. <a href="http://www.cc.gatech.edu/~lsong/papers/SonGreGue10.pdf">Nonparametric Tree Graphical Models via Kernel Embeddings</a><br>
+<li> L. Song, A. Gretton, D. Bickson, Y. Low, and C. Guestrin.<a href="http://jmlr.csail.mit.edu/proceedings/papers/v15/song11a/song11a.pdf">Kernel Belief Propagation</a><br>
+</ul>
+        <td _base_target="_blank"> <br> </td>
+</tr>
+
+
+
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Wed 3rd Apr</td>
+      	<td _base_target="_blank">
+Lecture 21 (Ankur): 
+Spectral Algorithms for Graphical Models<br>
+<font color="red">Case Study: Sentence Parsing in Natural Languages</font><br>
+<a href="lecture/lecture21-spectral.pdf">Slides</a>
+</td>
+        <td _base_target="_blank">
+<ul>
+<li>Kenton Murray (andrew id: kwmurray) </li>
+<li>Shashank (shashans)</li>
+<li><a href="lecture/scribe21.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank">
+        <td _base_target="_blank"> 
+Required:
+<ul>
+<li> D. Hsu, S. Kakade, and T. Zhang.<br>
+<a href="http://arxiv.org/abs/0811.4413">A Spectral Algorithm for Learning Hidden Markov Models</a><br>
+</ul>
+Optional:
+<ul>
+<li> A.P. Parikh, L. Song, and E.P. Xing. <a href="http://www.cs.cmu.edu/~epxing/papers/2011/Parikh_Song_Xing_ICML11.pdf">A Spectral Algorithm for Latent Tree Graphical Models</a><br>
+<li> L. Song, B. Boots, S. Siddiqi, G. Gordon, and A. Smola.<a href="http://www.icml2010.org/papers/495.pdf">Hilbert Space Embeddings of Hidden Markov Models</a><br>
+<li> L. Song, A.P. Parikh, and E.P. Xing.<a href="http://books.nips.cc/papers/files/nips24/NIPS2011_1479.pdf">Kernel Embeddings of Latent Tree Graphical Models</a><br>
+<li> S. Cohen, K. Stratos, M. Collins, D. Foster, L. Ungar. <a href="http://www.cs.columbia.edu/~scohen/acl12spectral.pdf">Spectral Learning of Latent-Variable PCFGs</a><br>
+</td>
+        <td _base_target="_blank">
+</tr>
+
+
+
+
+
+
+
+
+
+
+<tr class="lechead" _base_target="_blank">
+        <td colspan="6" _base_target="_blank">
+Module 6 : Nonparametric Bayesian Models and "Infinite" Models</td>
+</tr>
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Mon 8th Apr</td>
+    	<td _base_target="_blank">
+Lecture 22 (Sinead): 
+Dirichlet Process<br>
+<a href="lecture/lecture22-npbayes.pdf">Slides</a>
+</td>
+        <td _base_target="_blank">
+<ul>
+<li>
+Abhimanu Kumar (abhimank)
+</li>
+<li>
+Victor Chahuneau (vchahune)
+</li>
+<li>
+Rory Donovan (donovanr)
+</li>
+<li><a href="lecture/scribe22.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank"><br> </td>
+        <td _base_target="_blank"> 
+Required:
+<ul>
+<li>Yee Whye Teh. <a href="http://www.gatsby.ucl.ac.uk/~ywteh/research/npbayes/dp.pdf">Dirichlet Process</a><br>
+</ul>
+Optional:
+<ul>
+<li>Carl Edward Rasmussen. <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.86.3414">Gaussian processes for machine learning</a>
+</ul>
+</td>
+        <td _base_target="_blank"> <br> </td>
+</tr>
+
+
+
+
+
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Wed 10th Apr</td>
+      	<td _base_target="_blank">
+Lecture 23 (Sinead): 
+Indian Buffet Process <br>
+<a href="lecture/lecture23-npbayes.pdf">Slides</a>
+</td>
+        <td _base_target="_blank">
+<ul>
+<li>Palakodety, Shriphani (spalakod)</li>
+<li><a href="lecture/scribe23.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank">
+        <td _base_target="_blank">
+Required:
+<ul>
+<li>Thomas L. Griffiths and Zoubin Ghahramani. <a href="http://jmlr.csail.mit.edu/papers/volume12/griffiths11a/griffiths11a.pdf">The Indian Buffet Process: An Introduction and Review</a><br>
+</ul>
+</td>
+        <td _base_target="_blank"></td>
+</tr>
+
+
+
+
+
+
+<tr class="lecture" _base_target="_blank">
+      	<td _base_target="_blank">Mon 15th Apr</td>
+      	<td _base_target="_blank">
+Lecture 24 (Sinead/Eric): 
+Hierarchical Dirichlet Process<br>
+<font color="red">Case Study: Genetic Inference of the World Population</font><br>
+<a href="lecture/lecture24-HDP-topicmodels.pdf">Slides 1</a>
+<a href="lecture/lecture24-HDP.pdf">Slides 2</a>
+</td>
+        <td _base_target="_blank">
+<ul>
+<li>Zaid Sheikh (zsheikh)</li>
+<li>Alex Michael Beutel (abeutel)</li>
+<li><a href="lecture/scribe24.pdf">Scribe Notes</a></li>
+</ul>
+        <td _base_target="_blank">
+        <td _base_target="_blank">
+Required:
+<ul>
+<li>K. Sohn, E. P. Xing. <a href="http://www.cs.cmu.edu/~epxing/papers/2009/sohn_xing_aoas2009.pdf">A hierarchical Dirichlet process mixture model for haplotype reconstruction from multi-population data</a><br>
+</ul>
+</td>
+        <td _base_target="_blank"> <br> </td>
+</tr>
+
+
+
+
+<tr class="lechead" _base_target="_blank">
+        <td colspan="6" _base_target="_blank">
+Module 7 : Structured Sparsity</td>
+</tr>
+
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wed 17th Apr</td>
+      	<td _base_target="_blank">
+Lecture 25 (Eric): 
+Graphical induced structured input/output models<br>
+<font color="red">Case Study: Disease Association Analysis</font>
+<a href="lecture/lecture25-StructSparse.pdf">Slides</a>
+</td>
+        <td _base_target="_blank">
+<ul>
+<li> Meghana Kshirsagar (mkshirsa) </li>
+<li> Yiwen Chen (yiwenche) </li>
+<li><a href="lecture/scribe25.pdf">Scribe Notes</a></li>
+</ul>
+</td>
+      	<td _base_target="_blank"> </td>
+      	<td _base_target="_blank">
+Required:
+<ul>
+<li>X. Chen et al. <a href="http://projecteuclid.org/DPubS/Repository/1.0/Disseminate?view=body&id=pdfview_1&handle=euclid.aoas/1339419614">Smoothing Proximal Gradient Method for General Structured Sparse Regression</a><br>
+</ul>
+<ul>
+<li>S. Kim, E. P. Xing. <a href="http://www.plosgenetics.org/article/info:doi%2F10.1371%2Fjournal.pgen.1000587">Statistical Estimation of Correlated Genome Associations to a Quantitative Trait Network</a><br>
+</ul>
+Optional:
+        <ul>
+<li>S. Kim, E. P. Xing. <a href="http://www.cs.cmu.edu/~sssykim/papers/2010_ICML_tlasso.pdf">Tree-Guided Group Lasso for Multi-Task Regression with Structured Sparsity</a>
+</ul></td>
+<td></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wed 22nd Apr</td>
+      	<td _base_target="_blank">
+Lecture 26 (Seunghak):
+Convex Optimization 
+<a href="lecture/lecture26-ConvexOptimization.pdf">Slides</a>
+</td>
+        <td _base_target="_blank">
+<ul>
+<li>Sashank J Reddi (sjakkamr) </li>
+<li>Chen, Yun-Nung (yvchen) </li>
+</ul>
+</td>
+      	<td _base_target="_blank"></td>
+      	<td _base_target="_blank"> 
+Required:
+<ul>
+<li>F. Bach et al. <a href="http://www.di.ens.fr/~fbach/opt_book.pdf">Convex Optimization with Sparsity-Inducing Norms</a></li>
+</ul>
+Highly Recommended:
+<ul>
+<li>F. Bach, R. Jenatton, J. Mairal and G. Obozinski <a href="http://hal.archives-ouvertes.fr/docs/00/64/29/57/PDF/Bach-Jenatton-Mairal-Obozinski-HAL.pdf">Optimization with Sparsity-Inducing Penalties</a></li>
+</ul></td>
+        <td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Mon 24th Apr</td>
+      	<td _base_target="_blank">
+Lecture 27 (Eric): 
+Structured Sparse Additive Models
+<a href="lecture/lecture27-Spam.pdf">Slides</a>
+</td>
+        <td _base_target="_blank">
+<ul>
+<li> Wei Dai (wdai) </li>
+<li> Cong Lu (congl) </li>
+<li> Wang, Guanyu (guanyuw)</li>
+<li><a href="lecture/scribe27.pdf">Scribe Notes</a></li>
+</ul>
+      	<td _base_target="_blank"></td>
+      	<td _base_target="_blank">
+Required:
+<ul>
+<li> Ravikumar, P., Lafferty, J., Liu, H., and Wasserman, L. <a href="http://arxiv.org/pdf/0711.4555.pdf">Sparse additive models</a></li>
+<li> Yin, J., Chen, X., and Xing, E. <a href="http://icml.cc/2012/papers/463.pdf">Group Sparse Additive Models</a></li>
+</ul>
+Highly Recommended:
+<ul>
+<li> Hastie, T., and Tibshirani, R. <a href="http://www.stanford.edu/~hastie/Papers/gam.pdf">Generalized Additive Models</a></li>
+</ul>
+</td>
+        <td _base_target="_blank"></td>
+</tr>
+
+
+<tr class="lechead" _base_target="_blank">
+        <td colspan="6" _base_target="_blank">
+Module 8 : Posterior Regularization and Max-Margin GM:</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Mon 29th Apr</td>
+      	<td _base_target="_blank">
+Lecture 28 (Eric):
+Posterior Regularization and The Maximum Entropy Discrimination Principle
+<a href="lecture/lecture28-M3N.pdf">Slides</a>
+</td>
+        <td _base_target="_blank">
+<ul>
+<li>Cheng, Andrew (ac1) </li>
+<li>Downey, Carlton MacDonald (cmdowney) </li>
+<li><a href="lecture/scribe28.pdf">Scribe Notes</a></li>
+</ul>
+</td>
+      	<td _base_target="_blank">
+</td>
+      	<td _base_target="_blank">
+Required:
+<ul>
+<li>B. Taskar, C. Guestrin, D. Koller <a href="http://books.nips.cc/papers/files/nips16/NIPS2003_AA04.pdf">Max-margin Markov networks</a></li>
+<li> J. Zhu, E. P. Xing <a href="http://www.cs.cmu.edu/~epxing/papers/2009/zhu_xing_icml09.pdf">On Primal and Dual Sparsity of Markov Networks</a></li>
+</ul>
+</td>
+        <td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Wed 1st May</td>
+      	<td _base_target="_blank">
+Lecture 29 (Eric): 
+Maximum margin GM <a href="lecture/lecture29-RegBayes.pdf">Slides</a><br>
+<font color="red">Case Study: discriminative topic models for text and image</font>
+</td>
+        <td _base_target="_blank">
+<ul>
+<li>
+Fahrenkopf, Max A (mfahrenk)
+</li>
+<li>
+Gong, Yu (ygong1)
+</li>
+</ul>
+</td>
+      	<td _base_target="_blank"></td>
+      	<td _base_target="_blank">
+Required:
+<ul>
+<li>J. Zhu, A. Ahmed, E. P. Xing <a href="http://sailing.cs.cmu.edu/pdf/2009/zhu2-icml09.pdf">MedLDA: Maximum Margin Supervised Topic Models for Regression and Classi.cation</a></li>
+<li>J. Zhu, N. Chen, E. P. Xing <a href="./reading/ilsvm_revision_1st_eric7.pdf">Bayesian Inference with Posterior Regularization and applications to Infinite Latent SVMs</a></li>
+
+
+</ul>
+</td>
+        <td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+        <td _base_target="_blank">Mon 6th May</td>
+      	<td _base_target="_blank">Class presentation<br>
+<a href="project_2013.html">Completed Projects</a><br>
+<font color="red">NSH 1305 from 9AM to 1PM</font>
+</td>
+        <td _base_target="_blank"></td>
+      	<td _base_target="_blank"></td>
+      	<td _base_target="_blank"></td>
+        <td _base_target="_blank"></td>
+</tr>
+
+</tbody>
+</table>
+
+-->
+
+
+&nbsp;
+</div>
+
+<!--maincontent-->
+<!--Page content ends. Keep this line.-->
+
+<hr />
+<div id="trailer">
+&copy; 2009 Eric Xing @ School of Computer Science, Carnegie Mellon University<br />
+
+
+<script type="text/javascript">
+    var m = "Last updated " + document.lastModified;
+    var p = m.length-8;
+    document.write(m.substring(p, 0));
+</script>
+[<a href="http://validator.w3.org/check?uri=referer" rel="external">validate xhtml</a>]
+</div>
+
+  <!--trailer-->
+</div>
+
+  <!--content-->
+</body>
+</html>
